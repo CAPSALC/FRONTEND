@@ -1,1 +1,22 @@
-<p>employees-list works!</p>
+<div class="list row">
+    <div class="col-md-6">
+      <h4>Employees List</h4>
+      <ul class="list-group">
+        @for (employee of employees; track employee.id; let i = $index) {
+        <li
+          class="list-group-item"
+          [class.active]="i == currentIndex"
+          (click)="setActiveEmployee(employee, i)"
+        >
+          {{ employee.firstName }}
+        </li>
+        }
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <app-employee-details
+        [viewMode]="true"
+        [currentEmployee]="currentEmployee"
+      ></app-employee-details>
+    </div>
+  </div>
