@@ -2,13 +2,16 @@
     @if (currentEmployee.id){
     <h4>Employee</h4>
     <div>
+      <label><strong>ID:</strong></label> {{ currentEmployee.id }}
+    </div>
+    <div>
       <label><strong>First Name:</strong></label> {{ currentEmployee.firstName }}
     </div>
     <div>
         <label><strong>Last Name:</strong></label> {{ currentEmployee.lastName }}
     </div>
     <div>
-      <label><strong>Email:</strong></label> {{ currentEmployee.email }}
+      <label><strong>eMail:</strong></label> {{ currentEmployee.email }}
     </div>
   
     <a class="badge badge-warning" routerLink="/employees/{{ currentEmployee.id }}">
@@ -52,7 +55,8 @@
         </div>
       </form>
   
-      <button class="badge badge-danger mr-2" (click)="deleteEmployee()">
+      <button class="badge badge-danger mr-2" 
+        (click)="deleteEmployee()">
         Delete
       </button>
   

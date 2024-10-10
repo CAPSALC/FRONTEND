@@ -17,7 +17,7 @@ export class EmployeeService {
   }
 
   get(id: any): Observable<Employee> {
-    return this.http.get(`${baseUrl}/{id}`);
+    return this.http.get(`${baseUrl}/${id}`);
   }
 
   create(data: any): Observable<any> {
@@ -25,11 +25,15 @@ export class EmployeeService {
   }
 
   update(id: any, data: any): Observable<any> {
-    return this.http.put(`${baseUrl}/{id}`, data);
+    return this.http.put(`${baseUrl}/${id}`, data);
   }
 
   delete(id: any): Observable<any> {
-    return this.http.delete(`${baseUrl}/{id}`);
+    return this.http.delete(`${baseUrl}/${id}`);
+  
   }
 
+  findByEmail(email: any): Observable<Employee[]> {
+    return this.http.get<Employee[]>(`${baseUrl}?email=${email}`);
+  }
 }
